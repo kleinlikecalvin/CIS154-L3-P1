@@ -7,6 +7,8 @@
 	document.addEventListener("DOMContentLoaded", function(){
 		document.getElementById("v1").addEventListener("click", functionScopeExample);
 		document.getElementById("v2").addEventListener("click", unAutreFunctionScopeExample);
+		document.getElementById("v3").addEventListener("click", canIAccessThoseVariables);
+		document.getElementById("v4").addEventListener("click", blockScopeExample);
 	});//End stupid extra code just to put this script in the head instead of the body after everything has loaded.
 
 	function functionScopeExample(){
@@ -18,11 +20,24 @@
 
 		const myLastName = "Camus"; //Also, cannot redeclare const because they constant 
 		console.log("My last name is " + myLastName);
-	};//end functionScopeExample
+	};//end functionScopeExample function
 
 	function unAutreFunctionScopeExample(){
+		//all of these are local so although they're the same names as in the last function they only exist within this function and same with the last one.
+		var myFirstName = "Roger";
+		let myMiddleName = "Rufus";
+		const myLastName = "Weasley"; 
+
+		console.log("My full name is " + myFirstName + " " + myMiddleName + " " + myLastName);
+	}; //end unAutreFunctionScopeExample function
+
+	function canIAccessThoseVariables(){
+		console.log("No you can't because they are all local to the previous functions");
+	};//end canIAccessThoseVariables function
+
+	function blockScopeExample(){
 		
-	}; //end unAutreFunctionScopeExample
+	}; //end blockScopeExample();
 </script>
 
 </head>
