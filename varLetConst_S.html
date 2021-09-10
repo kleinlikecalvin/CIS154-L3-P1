@@ -8,8 +8,15 @@
 		document.getElementById("v1").addEventListener("click", functionScopeExample);
 	});//End stupid extra code just to put this script in the head instead of the body after everything has loaded.
 	function functionScopeExample(){
-		console.log("oh yah, this is good to go");
-	}//end functionScopeExample
+		var myFirstName = "Nikki"; //use var sparingly because you can redeclare the same var which is problematic, let and const are much bettah
+		console.log("My first name is " + myFirstName);
+
+		let myMiddleName = "Gerard"; //let will not allow you to redeclare a let; you can update the value but not redeclare nada. lets have local scope.
+		console.log("My middle name is " + myMiddleName);
+
+		const myLastName = "Camus";
+		console.log("My last name is " + myLastName);
+	};//end functionScopeExample
 </script>
 
 </head>
